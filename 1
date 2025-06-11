@@ -1,4 +1,29 @@
-// EJERCICIO 1 (AUN NO DISPONIBLE, CUANDO TE ESTE DIPONIBLE TE DIGO POR WHATSAPP PARA QUE ACTULICES ESTA PAGINA)
+// EJERCICIO 1 
+function EJERCICIO2Z2125(n: Integer): string;
+var
+  dig1, dig2: Integer;
+begin
+  while n >= 10 do
+  begin
+    dig1 := n mod 10;
+    n := n div 10;
+    dig2 := n mod 10;
 
+    if dig2 >= dig1 then
+    begin
+      Result := 'Los digitos no estan en orden creciente';
+      Exit;
+    end;
+  end;
+
+  Result := 'Los digitos estan en orden creciente';
+end;
 
 //LLAMADA DEL EJERCICIO 1
+
+ Edit2.Text := EJERCICIO2Z2125(n);
+
+
+
+
+ 
