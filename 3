@@ -1,4 +1,41 @@
-// EJERCICIO 3 (AUN NO DISPONIBLE, CUANDO TE ESTE DIPONIBLE TE DIGO POR WHATSAPP PARA QUE ACTULICES ESTA PAGINA)
+// EJERCICIO 3 
 
+function ejercicio3z2125(cad: string): string;
+var
+  i: Integer;
+  pal, res, longitudes, letra: string;
+begin
+  letra := InputBox('Letra', 'Ingrese la letra:', '');
+  letra := LowerCase(letra);
+  cad := cad + ' ';
+  pal := '';
+  res := '';
+  longitudes := '';
+
+  for i := 1 to length(cad) do
+  begin
+    if cad[i] <> ' ' then
+      pal := pal + cad[i]
+    else
+    begin
+      if (length(pal) > 0) and (LowerCase(pal[1]) = letra) and
+        (LowerCase(pal[length(pal)]) = letra) then
+      begin
+        res := res + pal + ' ';
+        longitudes := longitudes + IntToStr(length(pal)) + ' ';
+      end;
+      pal := '';
+    end;
+  end;
+
+  if res = '' then
+    Result := 'No hay palabras que cumplan la condición.'
+  else
+    Result := 'cad = ' + (res) + ' LongitudPal = ' + (longitudes);
+end;
 
 //LLAMADA DEL EJERCICIO 3
+ Edit3.Text := ejercicio3z2125(cad);
+
+ 
+
