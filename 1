@@ -1,9 +1,54 @@
 // EJERCICIO 1 
 
+function factorial(n: Integer): Integer;
+var
+  c, fac: Integer;
+
+begin
+  c := 0;
+  fac := 1;
+  while n > c do
+  begin
+    c := c + 1;
+    fac := fac * c;
+  end;
+
+  Result := fac;
+end;
+
+function pregunta1sf125(n: Integer): Real;
+var
+  s1, s2, suma, frac: Real;
+  exp: Real;
+  deno: Integer;
+
+begin
+
+  c := 0;
+  s1 := 1;
+  suma := 0;
+  frac := 0;
+  exp := 0;
+
+  while n > c do
+  begin
+    c := c + 1;
+    exp := Math.Power(s1, c);
+    s1 := s1 + 2;
+    deno := factorial(c - 1);
+    frac := exp / deno;
+
+    suma := suma + frac;
+
+  end;
+
+  Result := suma;
+
+end;
 
 //LLAMADA DEL EJERCICIO 1
 
-
+  Edit2.Text := FloatToStr(pregunta1sf125(n));
 
 
 
